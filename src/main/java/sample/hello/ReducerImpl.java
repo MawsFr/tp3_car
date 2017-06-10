@@ -11,7 +11,7 @@ public class ReducerImpl implements Reducer {
 	}
 
 	@Override
-	public void saveWord(String word) {
+	public void saveWord(final String word) {
 		if (!this.wordsCount.containsKey(word)) {
 			this.wordsCount.put(word, 0);
 		}
@@ -21,8 +21,8 @@ public class ReducerImpl implements Reducer {
 	@Override
 	public String print() {
 		String s = "";
-		for (Map.Entry<String, Integer> entry : this.wordsCount.entrySet()) {
-			s += entry.getKey() + " : " + entry.getValue();
+		for (final Map.Entry<String, Integer> entry : this.wordsCount.entrySet()) {
+			s += entry.getKey() + " : " + entry.getValue() + "\n";
 		}
 		return s;
 	}
