@@ -1,9 +1,15 @@
-package sample.hello;
+package question1;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import acteurs.Mapper;
+import acteurs.MapperImpl;
+import acteurs.Master;
+import acteurs.MasterImpl;
+import acteurs.Reducer;
+import acteurs.ReducerImpl;
 import akka.actor.ActorSystem;
 import akka.actor.TypedActor;
 import akka.actor.TypedProps;

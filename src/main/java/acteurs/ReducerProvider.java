@@ -1,4 +1,4 @@
-package sample.hello;
+package acteurs;
 
 import java.util.List;
 
