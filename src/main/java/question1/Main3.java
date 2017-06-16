@@ -12,6 +12,7 @@ import acteurs.Reducer;
 import acteurs.ReducerImpl;
 import akka.actor.ActorSystem;
 import akka.actor.TypedActor;
+import akka.actor.TypedActorExtension;
 import akka.actor.TypedProps;
 
 public class Main3 {
@@ -26,7 +27,7 @@ public class Main3 {
 
 	public static void main(final String[] args) {
 		final ActorSystem system = ActorSystem.create(SYSTEM_NAME);
-		
+		TypedActorExtension extension = TypedActor.get(system);
 		final List<Mapper> mappers = new ArrayList<>();
 		final List<Reducer> reducers = new ArrayList<>();
 
@@ -56,6 +57,13 @@ public class Main3 {
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}
+
+		extension.stop(reducer3);
+		extension.stop(reducer2);
+		extension.stop(reducer1);
+		extension.stop(mapper2);
+		extension.stop(mapper1);
+		extension.stop(master);
 
 		system.terminate();
 
