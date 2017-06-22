@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReducerImpl implements Reducer {
-	protected Map<String, Integer> wordsCount;
+	private Map<String, Integer> wordsCount;
 
 	public ReducerImpl() {
 		this.wordsCount = new HashMap<>();

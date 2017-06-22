@@ -15,4 +15,6 @@ public interface Master {
 
 	String print();
 
+	List<Reducer> getReducers();
+
 }

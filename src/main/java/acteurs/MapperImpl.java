@@ -3,13 +3,13 @@ package acteurs;
 import java.util.List;
 
 public class MapperImpl implements Mapper {
-	protected List<Reducer> reducers;
+	private List<Reducer> reducers;
 
 	@Override
 	public void countWords(String line) {
 		final String[] words = line.split(" ");
 		for(String word : words) {
-			ReducerProvider.partition(word, reducers).saveWord(word);
+			reducers.get(Math.abs(word.hashCode()) % reducers.size()).saveWord(word);
 		}
 
 	}

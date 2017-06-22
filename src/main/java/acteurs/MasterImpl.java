@@ -3,12 +3,13 @@ package acteurs;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MasterImpl implements Master {
 
-	protected List<Mapper> mappers;
-	protected List<Reducer> reducers;
+	private List<Mapper> mappers = new ArrayList<>();;
+	private List<Reducer> reducers = new ArrayList<>();;
 
 	@Override
 	public void countWords(String name) throws IOException {
@@ -43,6 +44,11 @@ public class MasterImpl implements Master {
 			s += reducer.print();
 		}
 		return s;
+	}
+
+	@Override
+	public List<Reducer> getReducers() {
+		return this.reducers;
 	}
 
 	@Override

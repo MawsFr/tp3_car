@@ -22,12 +22,8 @@ public class Constants {
 	public static final String CONFIG_MAPPERS = "mappers";
 	public static final String CONFIG_MASTER_REDUCERS = "masterreducers";
 
-	static {
-
-	}
-
 	public static void init() throws UnsupportedEncodingException {
-		ADDRESS_MAPPERS_SYSTEM = "akka.tcp://" + MAPPER_SYSTEM + "@localhost:2552";
+		ADDRESS_MAPPERS_SYSTEM = "akka.tcp://" + MAPPER_SYSTEM + "@127.0.0.1:2552";
 		MAPPER1_ADRESS = URLEncoder.encode(ADDRESS_MAPPERS_SYSTEM + USER + MAPPER1_NAME, "UTF-8");
 		MAPPER2_ADRESS = URLEncoder.encode(ADDRESS_MAPPERS_SYSTEM + USER + MAPPER2_NAME, "UTF-8");
 		MAPPER3_ADRESS = URLEncoder.encode(ADDRESS_MAPPERS_SYSTEM + USER + MAPPER3_NAME, "UTF-8");

@@ -1,8 +1,9 @@
 package acteurs;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ReducerProvider {
+public class ReducerProvider implements Serializable {
 	public static Reducer partition(final String word, final List<Reducer> reducers) {
 //		System.out.println("word" + word.hashCode());
 //		System.out.println("reducer" + reducers.size());
