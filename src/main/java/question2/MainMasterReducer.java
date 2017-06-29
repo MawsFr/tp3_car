@@ -1,7 +1,6 @@
 package question2;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ import question1.Main3;
 public class MainMasterReducer {
 	public static final String FILENAME = "texte.txt";
 
-	public static void main(final String[] args) throws UnsupportedEncodingException {
+	public static void main(final String[] args) throws IOException {
 		Constants.init();
 		final ActorSystem system = ActorSystem.create(Constants.MASTER_REDUCERS_SYSTEM,
 				ConfigFactory.load(Constants.CONFIG_MASTER_REDUCERS));
@@ -78,12 +77,13 @@ public class MainMasterReducer {
 		mapper2.setReducers(reducers);
 		mapper3.setReducers(reducers);
 
-		try {
-			master.countWords(Main3.FILENAME);
-			System.out.println(master.print());
-		} catch (final IOException e) {
-			e.printStackTrace();
-		}
+		// try {
+		master.countWords(Main3.FILENAME);
+		System.out.println(master.print());
+
+		// } catch (final IOException e) {
+		// e.printStackTrace();
+		// }
 
 		extension.stop(reducer2);
 		extension.stop(reducer1);

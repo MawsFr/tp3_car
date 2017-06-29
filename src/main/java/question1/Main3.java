@@ -53,7 +53,7 @@ public class Main3 {
 		
 		try {
 			master.countWords(FILENAME);
-			System.out.println(master.print());
+			master.print();
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}

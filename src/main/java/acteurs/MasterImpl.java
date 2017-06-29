@@ -8,8 +8,8 @@ import java.util.List;
 
 public class MasterImpl implements Master {
 
-	private List<Mapper> mappers = new ArrayList<>();;
-	private List<Reducer> reducers = new ArrayList<>();;
+	private List<Mapper> mappers = new ArrayList<>();
+	private List<Reducer> reducers = new ArrayList<>();
 
 	@Override
 	public void countWords(String name) throws IOException {
@@ -41,8 +41,9 @@ public class MasterImpl implements Master {
 	public String print() {
 		String s = "";
 		for (Reducer reducer : this.reducers) {
-			s += reducer.print();
+			s += reducer.print() + '\n';
 		}
+
 		return s;
 	}
 
